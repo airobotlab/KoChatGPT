@@ -15,7 +15,7 @@ ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시�
 chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
 
 <details>
-  <summary1.1) 한국어 질문 데이터셋에서 질문 수집</summary>
+  <summary> 1.1) 한국어 질문 데이터셋에서 질문 수집</summary>
   
 - **data_kochatgpt/kochatgpt_seed_data.txt** : 한국어 질문 수집 데이터셋 
     - 예시
@@ -138,5 +138,191 @@ data['rejected'] = 'bad_sentence'
 
 </details>
   
+* * *
+* * *
+# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)  
+
+
+- ChatGPT의 학습방법인 RLHF(Reinforcement Learning from Human Feedback) 실습코드: **kochatgpt_code_230320.ipynb**
+<a href="https://bit.ly/401rCrd">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+- 한국어 ChatGPT 데이터셋으로 ChatGPT-replica를 만드는 실습코드
+- RLHF(Reinforcement Learning from Human Feedback)의 3단계
+    - Step1) SFT(지도학습)
+    - Step2) RM(보상모델)
+    - Step3) PPO(강화학습)
+
+
+<details>
+  <summary> 2.0) Colab 환경설정 </summary>
+    - 1min 소요
+    - python>=3.8
+    
+```python
+# for ColossalAI
+!pip install colossalai==0.2.7
+
+# setup data
+!git clone https://github.com/airobotlab/KoChatGPT
+!mv KoChatGPT/data_kochatgpt .
+!mv KoChatGPT/img .
+
+# install chatgpt(colossalai) library
+%cd KoChatGPT/colossalai_ChatGPT_230319/
+!pip install .
+%cd ../../
+
+# setup etc library
+!pip install openai
+!pip install langchain==0.0.113
+!pip install pandas>=1.4.1
+```
+</details>
+
+
+## 2.1) Step 1) SFT: 질문에 대답을 잘하는 모델 만들기
+
+- SFT: Supervised Fine Tuning
+- Fine-tune a pretrained LLM on a specific domain or corpus of instructions and human demonstrations
+- 기존 GPT3는 다음 단어를 잘 맞추는 모델. But 질문에 대해 답을 맞추는 모델이 X
+- 질문에 응답을 잘하도록 SFT 수행
+- 먼저 사람이 지시에 대한 대답을 직접 작성(데이터 13,000개)하고, 이 데이터셋으로 SFT
+- 데이터: 질문-응답 쌍 데이터셋(12,000개)
+- 예시)
+    - 질문(prompt): 인공지능을 설명해보세요
+    - 응답(completion): 인공지능은 인간의 학습능력, 추론능력, 지각능력을 인공적으로 구현하려는 컴퓨터 과학의 세부분야 중 하나이다. ...  
+
+- code reference
+    - [fine tuning code_1](https://github.com/philschmid/fine-tune-GPT-2/blob/master/Fine_tune_a_non_English_GPT_2_Model_with_Huggingface.ipynb)
+    - [fine tuning code_2](https://github.com/Beomi/KoAlpaca/blob/main/train.py)
+
+- **SFT 예시**  
+<img src="img/1_SFT_1.png" width="500">  
+
+- **모델 입출력 예시**  
+<img src="img/image_step1.JPG" width="500">  
+
+- **전체 구조**  
+<img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/rlhf/pretraining.png" width="500">
+
+- **데이터셋 형태**
+step1) SFT(actor_training_data): SFT 지도 미세 조정에 사용되는 JSON 데이터
+```json
+[
+    {
+        "prompt": "",
+        "completion": ""        
+    }, ...
+]
+```
+
+- **결과물**
+    - Before: 다음 단어만 잘 생성 했었음
+    - After: 질문에 ‘잘’ 대답하는 모델
+    
+</details>
+
+<details>
+  <summary> 2.2) Step 2) RM: 좋은 글 채점기 만들기 </summary>
+
+- Collect a human annotated dataset and train a reward model
+- **배경**
+    - 기존 AI는 주관적인 글을 채점(점수화) 할 수 없었음
+    - 사람이 직접 피드백을 줘서 글 채점의 척도로 사용하자
+    - 매번 사람이 채점할 수 없으니, 사람의 채점을 모방하는 **좋은글 채점 AI모델** 을 만들자
+    - 채점 AI모델을 만드려면, 사람이 글을 채점한 데이터셋(33,000개)이 필요하다
+    - 동일 질문에 대해 AI모델이 생성한 여러 글(한 번에 4~6개 세트)을 사람이 직접 ranking을 매긴다.
+    - 왜?? 사람이 생성한 글에 바로 점수를 매기게 되면 사람마다 기준이 다를 수 있기 때문에 순위로
+    - **C > B > A**  
+
+- **Human labeling 예시**
+<img src="img/2_RM_1.png" width="700">  
+
+
+- **좋은글 채점 모델 학습(RM, Reward Model)**
+    - 1등 글은 높은 점수를
+    - 꼴등 데이터는 낮은 점수를
+    - 입력: AI가 생성한 글
+    - 출력: 0~1점  
+
+
+- 보상모델 입출력
+<img src="img/2_RM_2.png" width="700">
+
+- **결과물**
+    - Before: 좋은 글, 나쁜 글 판단 불가능
+    - After: 사람이 읽기에 좋은글/나쁜글 판단 모델
+    
+    
+- **전체 구조**
+<img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/rlhf/reward-model.png" width="500">
+
+
+</details>
+
+<details>
+  <summary> 2.3) Step3) PPO 학습: 사람의 피드백을 반영하여 학습 </summary>
+
+
+- Further fine-tune the LLM from step 1 with the reward model and this dataset using RL (e.g. PPO)
+- 배경
+    - **사람의 순위를 모사한 보상모델(RM)** 의 점수가 높아지도록 학습 (31,000개)
+    - 초기 모델에 비해 너무 많이 바뀌지 않도록  
+    
+<img src="./img/3_PPO_1.png" width="650">
+
+<img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/rlhf/rlhf.png" width="500">
+
+- Fine-tuning 태스크를 강화학습 문제로 다음과 같이 정형화
+    - Policy: 언어모델-프롬프트를 입력으로 받아 텍스트의 시퀀스(혹은 그 확률)를 리턴
+    - Action space : 언어모델의 모든 단어 (일반적으로 5만개 분량)
+    - Observation space : 가능한 인풋 토큰 시퀀스 (단어개수^시퀀스길이 이므로 엄청 큼!)
+    - Reward function : 보상모델과 policy shift에 대한 제약조건의 조합으로 정의됨
+
+<img src="img/3_PPO_2.png" width="500">
+
+- Frozen Model과 Non-frozen(trainable) Model의 텍스트 출력 확률간 KL divergence를 계산
+- trainable Model의 weight가 완전히 바뀌는 것을 방지하고 Reward Model에 말도 되지 않는 텍스트로 출력을 시작하는 것을 방지
+
+<img src="img/3_PPO_3.png" width="500">
+
+- PPO process
+[1] 초기화를 위해 intial probs(initial output text probabilities)를 new probs(new output text probabilities)와 동일하게 만듬
+
+- while:
+    - [2] New probs와 initial probs간 ratio을 계산함
+    - [3] 아래 공식에 따라 loss를 계산함.
+        - loss = -min(ratio * R, clip(ratio, 0.8, 1.2) * R)
+            - R = reward + KL (or 0.8*reward + 0.2*KL와 같은 weighted average)
+            - clip(ratio, 0.8, 1.2) → 0.8 ≤ ratio ≤ 1.2
+    - [4] Loss를 backpropagating하여 SFT Model의 weight를 업데이트함
+
+    - [5] 새롭게 업데이트된 SFT 모델로 new probs를 계산함
+
+    - [6] 2번부터 6번을 N 번 반복함
+
+- [loss1](https://github.com/hpcaitech/ColossalAI/blob/1216d1e7bdf223d831895e34c01fb40df36ea9c7/applications/ChatGPT/chatgpt/experience_maker/naive.py#L7)
+- [loss2](https://github.com/hpcaitech/ColossalAI/blob/1216d1e7bdf223d831895e34c01fb40df36ea9c7/applications/ChatGPT/chatgpt/models/utils.py#L31)
+
+
+</details>
+
+<details>
+  <summary> 실습에서 사용하는 ColossalAI 소개 </summary>
+
+
+- **[ColossalAI](https://github.com/hpcaitech/ColossalAI/tree/main/applications/ChatGPT)**
+    - step2 RM 학습과 step3 PPO 코드 깔끔하게 제공
+    - Multi-GPU로 DDP, ColossalAIStrategy, LoRA 학습코드 제공!!
+    
+- **ColossalAI 장점**
+    - ColossalAI는 pytorch에 비해 추론시 1.4배 빠르고, 학습시 7.7배 빠르다!!
+    - ColossalAI는 pytorch와 비교해 10.3배 큰 모델을 처리할수 있다!!
+    
+<img src="https://raw.githubusercontent.com/hpcaitech/public_assets/main/applications/chatgpt/ChatGPT%20scaling.png" width="800">
+
+<img src="https://raw.githubusercontent.com/hpcaitech/public_assets/main/applications/chatgpt/ChatGPT-1GPU.jpg" width="500">
+
 * * *
 * * *
