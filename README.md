@@ -61,7 +61,7 @@ chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
 - 다음 단어만 잘 생성하는 모델에서 질문에 '잘' 대답하는 모델 만들기
 - ChatGPT로 사람과 AI가 대화를 주고받는 채팅 데이터 생성
 - 데이터셋 예시
-- ```json
+- ```
 <<start conversation>>
 <사람>: 그렇군요. 무엇에 대해 이야기하고 싶으세요?
 <챗봇>: 궁금하신 주제에 대해 이야기하고 싶으신가요? 예를 들어 여행, 식품, 스포츠, 등등 다양한 토론에 참여할 수 있습니다.
@@ -82,7 +82,7 @@ chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
     - 3) GPT3로 생성('text-ada-001')
 - ChatGPT > GPT3-davinci > GPT3-ada 순으로 랜덤하게 섞은 후 ranking 자동 생성
 - 데이터셋 예시
-```json
+```
 [
     {
         "prompt": "번디는 자신이 탐정잡지, 범죄소설 그리고 성범죄 관련 실제 범죄 다큐멘터리들을 탐독했다고 누구에게 말했나?",
@@ -109,7 +109,7 @@ data['rejected'] = 'bad_sentence'
 - PPO 데이터: [**data_kochatgpt/kochatgpt_3_PPO.jsonl**](https://github.com/airobotlab/KoChatGPT/data_kochatgpt/kochatgpt_3_PPO.jsonl): 12,000개
 - AI가 자동으로 글을 생성하기 위한 prompt 데이터셋
 - SFT 데이터셋에서 prompt만 가져와서 jsonl 형태로 변형후 저장
-```json
+```
 [
     {
         "prompt": ""
