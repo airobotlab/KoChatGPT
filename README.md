@@ -15,7 +15,7 @@ ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시�
 chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
 
 <details>
-  <summary>#### 1.1) 한국어 질문 데이터셋에서 질문 수집</summary>
+  <summary1.1) 한국어 질문 데이터셋에서 질문 수집</summary>
   
 - **data_kochatgpt/kochatgpt_seed_data.txt** : 한국어 질문 수집 데이터셋 
     - 예시
@@ -38,9 +38,14 @@ chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
     - [data4, KorQuad/5774](https://korquad.github.io/KorQuad%201.0/)  
     - 4가지 데이터셋에서 총 167,577 질문셋 수집
     - 12,000개 질문 랜덤 추출
+</details>
+
 
 ### RLHF 데이터셋 생성
-#### 1.2)  step1, SFT(Supervised Fine-tuning) 데이터셋 구축
+
+<details>
+  <summary> 1.2)  step1, SFT(Supervised Fine-tuning) 데이터셋 구축</summary>
+  
 ###### 1.2.1) 한국어 QA 데이터셋의 질문으로 답변 자동 생성(ChatGPT): 12,000개
 - SFT 데이터: [**data_kochatgpt/kochatgpt_1_SFT.jsonl**](https://github.com/airobotlab/KoChatGPT/data_kochatgpt/kochatgpt_1_SFT.jsonl)
 - 다음 단어만 잘 생성하는 모델에서 질문에 '잘' 대답하는 모델 만들기
@@ -75,8 +80,11 @@ chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
 <챗봇>: 그렇게 되었군요. 스포츠 소식과 업데이트를 받기 위해 귀하가 해야 할 준비는 무엇인가요? 스포츠 사이트, 스포츠 앱, 스포츠 유튜브 채널, 소셜 미디어 등을 통해 스포츠 소식과 업데이트를 받기 위해 준비해야 합니다.
 ```
 
+</details>
 
-#### 1.3)  step2, RM(Reward Model, 좋은글 채점모델) 데이터셋 구축
+<details>
+  <summary> 1.3)  step2, RM(Reward Model, 좋은글 채점모델) 데이터셋 구축</summary>
+
 - RM 데이터: [**data_kochatgpt/kochatgpt_2_RM.jsonl**](https://github.com/airobotlab/KoChatGPT/data_kochatgpt/kochatgpt_2_RM.jsonl): 10,220개
 - Ranking 데이터가 필요하므로 동일한 prompt에 대해 각기 다른 3가지 답변 자동 생성
     - 1) ChatGPT로 생성
@@ -108,7 +116,12 @@ data['chosen'] = 'good_sentence'
 data['rejected'] = 'bad_sentence'
 ```
 
-#### 1.4)  step3, PPO(질문에 ``더`` 잘 답하는 모델) 데이터셋 구축
+</details>
+  
+  
+<details>
+  <summary> 1.4)  step3, PPO(질문에 ``더`` 잘 답하는 모델) 데이터셋 구축</summary>
+  
 - PPO 데이터: [**data_kochatgpt/kochatgpt_3_PPO.jsonl**](https://github.com/airobotlab/KoChatGPT/data_kochatgpt/kochatgpt_3_PPO.jsonl): 12,000개
 - AI가 자동으로 글을 생성하기 위한 prompt 데이터셋
 - SFT 데이터셋에서 prompt만 가져와서 jsonl 형태로 변형후 저장
@@ -123,5 +136,7 @@ data['rejected'] = 'bad_sentence'
 ]
 ```
 
+</details>
+  
 * * *
 * * *
