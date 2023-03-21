@@ -140,15 +140,12 @@ data['rejected'] = 'bad_sentence'
   
 * * *
 * * *
-# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)  
-
-
-- ChatGPT의 학습방법인 RLHF(Reinforcement Learning from Human Feedback) 실습코드: **kochatgpt_code_230320.ipynb**
-<a href="https://bit.ly/401rCrd">
+# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)  <a href="https://bit.ly/401rCrd">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+  
 
-
+- ChatGPT의 학습방법인 RLHF(Reinforcement Learning from Human Feedback) 실습코드: **kochatgpt_code_230320.ipynb**
 - 한국어 ChatGPT 데이터셋으로 ChatGPT-replica를 만드는 실습코드
 - RLHF(Reinforcement Learning from Human Feedback)의 3단계
     - Step1) SFT(지도학습)
