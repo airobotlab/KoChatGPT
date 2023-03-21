@@ -14,7 +14,9 @@ ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시�
 # 1) kochatgpt [데이터 구축코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_data_230320.ipynb)
 chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
 
-#### 1.1) 한국어 질문 데이터셋에서 질문 수집
+<details>
+  <summary>#### 1.1) 한국어 질문 데이터셋에서 질문 수집</summary>
+  
 - **data_kochatgpt/kochatgpt_seed_data.txt** : 한국어 질문 수집 데이터셋 
     - 예시
 ```
