@@ -95,6 +95,7 @@ chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
             2
         ]
     }, ...
+]
 ```
 - 사람이 labeling 시 문장을 읽고 ranking을 0~2로 순위를 매긴다
 - 향후 Step2) RM 모델을 학습할 때는 아래 형식으로 ranking을 2개씩 묶어 chosen과 rejected 데이터셋으로 변환하여 사용함
