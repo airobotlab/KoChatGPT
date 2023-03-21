@@ -147,6 +147,8 @@ data['rejected'] = 'bad_sentence'
 <a href="https://bit.ly/401rCrd">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+
+
 - 한국어 ChatGPT 데이터셋으로 ChatGPT-replica를 만드는 실습코드
 - RLHF(Reinforcement Learning from Human Feedback)의 3단계
     - Step1) SFT(지도학습)
@@ -180,9 +182,9 @@ data['rejected'] = 'bad_sentence'
 ```
 </details>
 
-
-## 2.1) Step 1) SFT: 질문에 대답을 잘하는 모델 만들기
-
+<details>
+  <summary> 2.1) Step 1) SFT: 질문에 대답을 잘하는 모델 만들기 </summary>
+  
 - SFT: Supervised Fine Tuning
 - Fine-tune a pretrained LLM on a specific domain or corpus of instructions and human demonstrations
 - 기존 GPT3는 다음 단어를 잘 맞추는 모델. But 질문에 대해 답을 맞추는 모델이 X
