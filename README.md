@@ -45,7 +45,9 @@ chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
 - Human labling이 필요하지만 ChatGPT 이용
 - 질문을 입력으로 주고 ChatGPT로 답변 자동생성
 - 데이터셋 예시
+
 <img src="img/data_img_1.JPG" width="500">
+
 ```json
 {
     "prompt": "술 먹고 싶어",
