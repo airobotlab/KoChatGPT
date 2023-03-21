@@ -140,7 +140,9 @@ data['rejected'] = 'bad_sentence'
   
 * * *
 * * *
-# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)  <a href="https://bit.ly/401rCrd">
+# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)
+  
+<a href="https://bit.ly/401rCrd">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
   
