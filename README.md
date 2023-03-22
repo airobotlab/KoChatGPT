@@ -331,8 +331,8 @@ step1) SFT(actor_training_data): SFT 지도 미세 조정에 사용되는 JSON �
 * * *
 * * *
 
-※ 구현 모델은 ChatGPT-replica입니다. 실제 ChatGPT와 다를 수 있습니다.
-※ 실습을 위해 GPT3가 아닌 KoGPT2+RLHF로 구현합니다. 거대 언어모델로 개발 시 어려움이 있을 수 있습니다.
-※ 실습환경: Colab, 선수 지식: 파이썬
-※ Colab에서 돌아가기 위해 각 Step을 학습한 후 저장된 모델을 local로 다운받고 '런타임 연결 해제 및 삭제'를 눌러야 다음 Step이 돌아갑니다.(colab 메모리 부족) Step1/Step2에서 학습된 모델을 Step3에 입력해줘야 합니다.
-※ 데이터는 OpenAI API로 자동생성 했습니다. 사람의 검수가 필요합니다.
+- ※ 구현 모델은 ChatGPT-replica입니다. 실제 ChatGPT와 다를 수 있습니다.
+- ※ 실습을 위해 GPT3가 아닌 KoGPT2+RLHF로 구현합니다. 거대 언어모델로 개발 시 어려움이 있을 수 있습니다.
+- ※ 실습환경: Colab, 선수 지식: 파이썬
+- ※ Colab에서 돌아가기 위해 각 Step을 학습한 후 저장된 모델을 local로 다운받고 '런타임 연결 해제 및 삭제'를 눌러야 다음 Step이 돌아갑니다.(colab 메모리 부족) Step1/Step2에서 학습된 모델을 Step3에 입력해줘야 합니다.
+- ※ 데이터는 OpenAI API로 자동생성 했습니다. 사람의 검수가 필요합니다.
