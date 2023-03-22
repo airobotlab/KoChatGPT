@@ -140,6 +140,7 @@ data['rejected'] = 'bad_sentence'
   
 * * *
 * * *
+
 # 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)
   
 <a href="https://bit.ly/401rCrd">
@@ -326,8 +327,10 @@ step1) SFT(actor_training_data): SFT 지도 미세 조정에 사용되는 JSON �
 <img src="https://raw.githubusercontent.com/hpcaitech/public_assets/main/applications/chatgpt/ChatGPT-1GPU.jpg" width="500">
 
 </details>
+
 * * *
 * * *
+
 ※ 구현 모델은 ChatGPT-replica입니다. 실제 ChatGPT와 다를 수 있습니다.
 ※ 실습을 위해 GPT3가 아닌 KoGPT2+RLHF로 구현합니다. 거대 언어모델로 개발 시 어려움이 있을 수 있습니다.
 ※ 실습환경: Colab, 선수 지식: 파이썬
