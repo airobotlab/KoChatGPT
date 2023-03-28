@@ -1,5 +1,19 @@
 # KoChatGPT-replica(RLHF) 프로젝트
 
+<p align="center">
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">
+    <img alt="licenses" src="https://img.shields.io/github/license/airobotlab/KoChatGPT?style=flat-square"></a>
+  <a href="https://colab.research.google.com/drive/1RUlTeJo4qhnQZPXUUFIgvlj0R9ARR805?usp=sharing">
+    <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
+  <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/airobotlab/KoChatGPT?style=flat-square&color=yellow"></a>
+  <a href="https://github.com/airobotlab/KoChatGPT/blob/master/watchers">
+    <img alt="GitHub watching" src="https://img.shields.io/github/watchers/airobotlab/KoChatGPT?style=flat-square&color=ff69b4"></a>
+  <a href="https://github.com/airobotlab/KoChatGPT/graphs/contributors">
+    <img alt="contributors" src="https://img.shields.io/badge/contributors-welcome-yellowgreen?style=flat-square"></a>
+</p>
+
+
 ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시다. ChatGPT는 공개 코드가 없습니다. 본 세미나에서는 ChatGPT를 만든 원리인 GPT fine-tuning, 강화학습(PPO), RLHF, ChatGPT 데이터셋 구축에 대해 다루고 코드 실습을 합니다. 만들어진 모델을 활용만 하는 건 재미없잖아요?? 우리 분야만의 ChatGPT(한국어/전문분야)를 직접 만드는 방법을 소개합니다.
   ※ 구현 모델은 ChatGPT-replica입니다. 실제 ChatGPT와 다를 수 있습니다.
   ※ GPT3가 아닌 GPT2+RLHF로 구현합니다. 거대언어모델로 개발시 어려움이 있을 수 있습니다.
