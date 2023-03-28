@@ -1,14 +1,9 @@
 # KoChatGPT-replica(RLHF) 프로젝트
 
 <p align="center">
-<!--   <a href="https://www.apache.org/licenses/LICENSE-2.0">
-    <img alt="licenses" src="https://img.shields.io/github/license/airobotlab/KoChatGPT?style=flat-square"></a> -->
   <a href="https://bit.ly/401rCrd">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
   <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/airobotlab/KoChatGPT?style=flat-square&color=yellow"></a>
-  <a href="https://github.com/airobotlab/KoChatGPT/blob/master/watchers">
-    <img alt="GitHub watching" src="https://img.shields.io/github/watchers/airobotlab/KoChatGPT?style=flat-square&color=ff69b4"></a>
 </p>
 
 
