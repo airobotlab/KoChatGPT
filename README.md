@@ -9,8 +9,6 @@
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/airobotlab/KoChatGPT?style=flat-square&color=yellow"></a>
   <a href="https://github.com/airobotlab/KoChatGPT/blob/master/watchers">
     <img alt="GitHub watching" src="https://img.shields.io/github/watchers/airobotlab/KoChatGPT?style=flat-square&color=ff69b4"></a>
-  <a href="https://github.com/airobotlab/KoChatGPT/graphs/contributors">
-    <img alt="contributors" src="https://img.shields.io/badge/contributors-welcome-yellowgreen?style=flat-square"></a>
 </p>
 
 
