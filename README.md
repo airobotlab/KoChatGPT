@@ -1,7 +1,7 @@
 # KoChatGPT-replica(RLHF) 프로젝트
 
 <p align="center">
-  <a href="https://bit.ly/401rCrd">
+  <a href="https://bit.ly/41EcPDC">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
   <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
 </p>
@@ -157,14 +157,14 @@ data['rejected'] = 'bad_sentence'
 * * *
 * * *
 
-# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230320.ipynb)
+# 2) kochatgpt [RLHF hands on 코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_code_230421.ipynb)
   
-<a href="https://bit.ly/401rCrd">
+<a href="https://bit.ly/41EcPDC">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
   
 
-- ChatGPT의 학습방법인 RLHF(Reinforcement Learning from Human Feedback) 실습코드: **kochatgpt_code_230320.ipynb**
+- ChatGPT의 학습방법인 RLHF(Reinforcement Learning from Human Feedback) 실습코드: **kochatgpt_code_230421.ipynb**
 - 한국어 ChatGPT 데이터셋으로 ChatGPT-replica를 만드는 실습코드
 - RLHF(Reinforcement Learning from Human Feedback)의 3단계
     - Step1) SFT(지도학습)
@@ -176,8 +176,19 @@ data['rejected'] = 'bad_sentence'
   <summary> 2.0) Colab 환경설정 </summary>
     - 1min 소요
     - python>=3.8
+    - torch 1.x
     
 ```python
+# torch 버전 다운. torch>=2.0 에선 colosalai가 동작안함
+!pip uninstall torch -y
+!pip install torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+
+import torch
+
+print("Torch version:{}".format(torch.__version__))
+print("cuda version: {}".format(torch.version.cuda))
+print("cudnn version:{}".format(torch.backends.cudnn.version()))
+
 # for ColossalAI
 !pip install colossalai==0.2.7
 
