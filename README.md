@@ -19,7 +19,11 @@ ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시�
 - kochatgpt 결과예시
 <p align="center">
   <img src="img/kochatgpt_output_2.JPG" width="500">
+</p>
+<p align="center">
   <img src="img/kochatgpt_output_3.JPG" width="500">
+</p>
+<p align="center">  
   <img src="img/kochatgpt_output_1.JPG" width="500">
 </p>
   
