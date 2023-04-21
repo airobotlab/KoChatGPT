@@ -16,7 +16,10 @@ ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시�
 - 데이터(RLHF): [data_kochatgpt](data_kochatgpt)
 - LLM 모델: GPT2([skt/kogpt2-base-v2](https://github.com/SKT-AI/KoGPT2))
 - GPU: [Colab](https://colab.research.google.com/?hl=ko)
-
+- kochatgpt 결과예시
+<img src="img/kochatgpt_output_1.JPG" width="500">
+<img src="img/kochatgpt_output_2.JPG" width="500">
+<img src="img/kochatgpt_output_3.JPG" width="500">
 
 # 1) kochatgpt [데이터 구축코드](https://github.com/airobotlab/KoChatGPT/blob/main/kochatgpt_data_230320.ipynb)
 chatgpt의 RLHF를 학습하기 위한 3가지 step의 한국어 데이터셋
