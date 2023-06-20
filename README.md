@@ -1,5 +1,11 @@
 # KoChatGPT-replica(RLHF) 프로젝트
 
+## 230620_KCC ChatGPT Tutorial
+- 강의자료 및 코드: https://github.com/airobotlab/KoChatGPT
+- RLHF 코드 실습 Colab 링크: https://bit.ly/41EcPDC
+- 프롬프트 엔지니어링 Colab 링크: https://bit.ly/3W89UkV
+
+
 <p align="center">
   <a href="https://bit.ly/41EcPDC">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
