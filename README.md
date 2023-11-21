@@ -58,6 +58,16 @@
   <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
 </p>
 
+#### 8) 프롬프트 엔지니어링 실습코드
+<p align="center">
+  <a href="https://bit.ly/3W89UkV">
+    <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
+  <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
+</p>
+
+
+
+
 
 ChatGPT. 활용을 넘어서 ChatGPT-replica 모델을 직접 만들어 봅시다. ChatGPT는 공개 코드가 없습니다. 본 세미나에서는 ChatGPT를 만든 원리인 GPT fine-tuning, 강화학습(PPO), RLHF, ChatGPT 데이터셋 구축에 대해 다루고 코드 실습을 합니다. 만들어진 모델을 활용만 하는 건 재미없잖아요?? 우리 분야만의 ChatGPT(한국어/전문분야)를 직접 만드는 방법을 소개합니다.
   ※ 구현 모델은 ChatGPT-replica입니다. 실제 ChatGPT와 다를 수 있습니다.
