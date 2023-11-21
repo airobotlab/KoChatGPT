@@ -5,9 +5,9 @@
 - RLHF 코드 실습 Colab 링크: https://bit.ly/41EcPDC
 - 프롬프트 엔지니어링 Colab 링크: https://bit.ly/3W89UkV
 
-
+### 1) RLHF 실습코드
 <p align="center">
-  <a href="https://bit.ly/41EcPDC">
+  <a href="https://colab.research.google.com/drive/1_aws1VolXkvd4xIrFExTdc3qd1hm7nNv?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
   <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
 </p>
