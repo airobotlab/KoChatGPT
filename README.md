@@ -1,18 +1,17 @@
 # KoChatGPT-replica(RLHF) 프로젝트
 
-## 230620_KCC ChatGPT Tutorial
+## 23122_THE AI KOREA 2023 Tutorial
 - 강의자료 및 코드: https://github.com/airobotlab/KoChatGPT
-- RLHF 코드 실습 Colab 링크: https://bit.ly/41EcPDC
 - 프롬프트 엔지니어링 Colab 링크: https://bit.ly/3W89UkV
 
-### 1) RLHF 실습코드(1_kochatgpt_code_231122.ipynb)
+#### 1) RLHF 실습코드(1_kochatgpt_code_231122.ipynb)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1_aws1VolXkvd4xIrFExTdc3qd1hm7nNv?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
   <a href="https://github.com/airobotlab/KoChatGPT/stargazers">
 </p>
 
-### 2) GPT3.5turbo fine-tuning 실습코드(2_GPT_3_5_Turbo_Fine_tuning_231122)
+#### 2) GPT3.5turbo fine-tuning 실습코드(2_GPT_3_5_Turbo_Fine_tuning_231122)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1qcznV7x6awwn2kDThQ0HM6uPUuD7BeaN?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
@@ -20,7 +19,7 @@
 </p>
 
 
-### 3) Autotrain을 이용한 llama2 fine-tuning 실습코드(3_AutoTrain_LLM_colab_231122.ipynb)
+#### 3) Autotrain을 이용한 llama2 fine-tuning 실습코드(3_AutoTrain_LLM_colab_231122.ipynb)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1QXqPVg2P7Im9A7vJsBQpzBqsRsYbzXPD?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
@@ -28,7 +27,7 @@
 </p>
 
 
-### 4) polyglot_ko_12B fine-tuning 실습코드(4_instruct_fine_tuning_polyglot_ko_12B_colab_231122.ipynb)
+#### 4) polyglot_ko_12B fine-tuning 실습코드(4_instruct_fine_tuning_polyglot_ko_12B_colab_231122.ipynb)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1SH81IOt4NYOaKVrL5Sa2tt_HeQqduU71?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
@@ -36,7 +35,7 @@
 </p>
 
 
-### 5) DPO llama2 실습코드(5_DPO_on_llama2_실습_231122.ipynb)
+#### 5) DPO llama2 실습코드(5_DPO_on_llama2_실습_231122.ipynb)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1ccQy4wrbzCWQYBvNU1Zvv9HoXM6yiUKt?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
@@ -44,7 +43,7 @@
 </p>
 
 
-### 6) langchain을 이용한 RAG 실습코드(6_RAG_langchain_231122)
+#### 6) langchain을 이용한 RAG 실습코드(6_RAG_langchain_231122)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1HkhOK7gec-M_QqREj_L_cC36Do3g0QpA?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
@@ -52,7 +51,7 @@
 </p>
 
 
-### 7) RAG 평가 실습코드(7_LLM_RAG_Evaluation_231122)
+#### 7) RAG 평가 실습코드(7_LLM_RAG_Evaluation_231122)
 <p align="center">
   <a href="https://colab.research.google.com/drive/1mNwADnoDf5giPb4rh2abJFwIDAlCYlGT?usp=sharing">
     <img alt="licenses" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
